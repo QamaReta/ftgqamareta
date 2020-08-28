@@ -73,9 +73,9 @@ class SpeedReadMod(loader.Module):
 		image = Image.new("RGB", (x, y), (255, 255, 255))
 		image.save(output, save_all=True, append_images=frames, duration=100)
 		output.seek(0)
+		await message.client.send_file(message.chat_id, output)
 		await message.edit("Готово, забирай свое говно")
 		time.sleep(2)
-		await message.client.send_file(message.chat_id, output)
 		await message.delete()
 		#await message.client.send_file(message.chat_id, output)
 	
