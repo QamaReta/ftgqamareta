@@ -32,7 +32,7 @@ def register(cb):
 class SpeedReadMod(loader.Module):
 	"""Каждое слово раз в 200мс"""
 	strings = {
-		"name": "SpeedRead"
+		"name": "SpeedReadFast"
 	}
 
 	async def client_ready(self, client, db):
@@ -41,7 +41,7 @@ class SpeedReadMod(loader.Module):
 	
 	@loader.sudo
 	async def srcmd(self, message):
-		""".sr <text or reply>"""
+		""".srf <text or reply>"""
 		text = utils.get_args_raw(message)
 		
 		if not text:
