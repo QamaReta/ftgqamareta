@@ -47,12 +47,12 @@ class SpeedReadMod(loader.Module):
 		if not text:
 			reply = await message.get_reply_message()
 			if not reply:
-				await message.edit("Нет текста")
+				await message.edit("Ты еблан? Где текст")
 				return
 			text = reply.raw_text
 		text = text.split()
 		frames = []
-		await message.edit("Записываю...")
+		await message.edit("Ща сек")
 		for i in text:
 			x = y = 512
 			image = Image.new("RGB", (x, y), (255, 255, 255))
@@ -65,7 +65,7 @@ class SpeedReadMod(loader.Module):
 				font = ImageFont.truetype(font_io, size=fontsize)
 				width, height = draw.multiline_textsize(i, font=font)
 				
-			draw.multiline_text(((x-width)/2,(y-height)/2), i, font=font, fill="black")
+			draw.multiline_text(((x-width)/2,(y-height)/2), i, font=font, fill="red")
 			frames.append(image)
 		output = io.BytesIO()
 		output.name = "out.gif"
